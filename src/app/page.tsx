@@ -27,9 +27,15 @@ const Page = () => {
                 TwinifyAPI
               </h1>
               <p className="mt-4 lg:mt-8 text-lg lg:pr-10 text-center lg:text-left text-balance md:text-wrap text-gray-600">
-                Comparing text meaning has always been slow and expensive. Not
-                anymore. Introducing a fast, free and open-source similarity API
-                for your apps.
+                Comparing text meanings can{' '}
+                <span className="bg-[#4C6f92] px-1 text-gray-50">
+                  solve countless
+                </span>{' '}
+                <span className="bg-[#4C6f92] px-1 text-gray-50 mr-1">
+                  problems
+                </span>
+                — and our tool makes it happen in a single request. Simple,
+                powerful, and incredibly handy.
               </p>
               <ul className="mt-8 space-y-2 font-medium flex flex-col items-center sm:items-start">
                 <li className="flex gap-1.5 items-center text-left">

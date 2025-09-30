@@ -21,7 +21,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="/"
+            href="https://github.com/DilsankaSajith/twinify-api.git"
             target="_blank"
             className={buttonVariants({ variant: 'secondary' })}
           >
