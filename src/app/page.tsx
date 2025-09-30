@@ -1,103 +1,93 @@
-import Image from "next/image";
+import Demo from '@/components/demo';
+import MaxWidthWrapper from '@/components/max-width-wrapper';
+import { Check } from 'lucide-react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-export default function Home() {
+const Page = () => {
+  const codeSnippet = `
+    await fetch('http://localhost:3000/api/similarity', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            text1: 'I love coding',
+            text2: 'Coding is my middle name',
+        }),
+    });`;
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <section className="relative py-24 sm:py-32">
+        <MaxWidthWrapper>
+          <div className="mx-auto sm:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+            <div className="mx-auto maw-w-lg text-center sm:text-left flex flex-col items-center lg:items-start">
+              <h1 className="tracking-tight sm:text-left mt-10 font-bold !leading-[4rem] text-gray-900 text-5xl md:text-7xl text-pretty whitespace-nowrap">
+                TwinifyAPI
+              </h1>
+              <p className="mt-4 lg:mt-8 text-lg lg:pr-10 text-center lg:text-left text-balance md:text-wrap text-gray-600">
+                Comparing text meaning has always been slow and expensive. Not
+                anymore. Introducing a fast, free and open-source similarity API
+                for your apps.
+              </p>
+              <ul className="mt-8 space-y-2 font-medium flex flex-col items-center sm:items-start">
+                <li className="flex gap-1.5 items-center text-left">
+                  <Check className="size-5 shrink-0 text-[#4C6f92]" />
+                  Plagarism detection
+                </li>
+                <li className="flex gap-1.5 items-center text-left">
+                  <Check className="size-5 shrink-0 text-[#4C6f92]" />
+                  Duplicated bug reports detection
+                </li>
+                <li className="flex gap-1.5 items-center text-left">
+                  <Check className="size-5 shrink-0 text-[#4C6f92]" />
+                  Chat-bot/Virtual assist
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col bg-gray-900 shadow-2xl rounded-tl-xl rounded-br-xl overflow-hidden min-h-[30rem] mt-6 lg:mt-0">
+              <div className="flex bg-gray-800/40 ring-1 ring-white/5">
+                <div className="-mb-px flex text-sm/6 font-medium text-gray-400">
+                  <div className="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">
+                    page.tsx
+                  </div>
+                </div>
+              </div>
+              <div className="overflow-hidden">
+                <div className="max-h-[30rem]">
+                  <SyntaxHighlighter
+                    language="typescript"
+                    style={{
+                      ...vscDarkPlus,
+                      'pre[class*="language-"]': {
+                        ...vscDarkPlus['pre[class*="language-"]'],
+                        background: 'transparent',
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+                        overflow: 'hidden',
+                      },
+                      'code[class*="language-"]': {
+                        ...vscDarkPlus['code[class*="language-"]'],
+                        background: 'transparent',
+                      },
+                    }}
+                  >
+                    {codeSnippet}
+                  </SyntaxHighlighter>
+                </div>
+              </div>
+            </div>
+          </div>
+        </MaxWidthWrapper>
+      </section>
+
+      <section className="relative py-24 sm:py-32">
+        <MaxWidthWrapper>
+          <Demo />
+        </MaxWidthWrapper>
+      </section>
+    </>
   );
-}
+};
+
+export default Page;
