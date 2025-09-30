@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Text Similarity SaaS
 
-## Getting Started
+A **Text Similarity Checker** built with **Next.js 15, TypeScript, Zod, and Hugging Face AI**.  
+This app allows users to submit two pieces of text and receive a **similarity score** along with a **label** indicating whether the texts are _similar_, _maybe relevant_, or _not relevant_.
 
-First, run the development server:
+It demonstrates **full-stack development, AI integration, and modern UI design** — perfect for portfolio or internship showcases.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Semantic Text Comparison:** Uses Hugging Face embeddings and cosine similarity to evaluate how similar two texts are.
+- **Interactive UI:** Clean and responsive interface with live results.
+- **Score & Labels:** Returns numeric similarity score and label: `similar`, `maybe relevant`, or `not relevant`.
+- **Portfolio-ready Design:** Fully client-side visualization, badges, and color-coded results.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 💡 Real-World Use Cases
 
-To learn more about Next.js, take a look at the following resources:
+- Plagiarism detection in articles or essays
+- Duplicate bug report detection in issue trackers
+- Virtual assistant / chatbot query matching
+- Resume and job description comparison
+- Content recommendation systems
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠 Tech Stack
 
-## Deploy on Vercel
+- **Next.js 15** – Full-stack React framework
+- **TypeScript** – Type-safe development
+- **Zod** – API request and response validation
+- **Hugging Face AI** – Free text embeddings for semantic similarity
+- **Tailwind CSS + shadcn/ui** – Modern, responsive UI components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
