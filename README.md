@@ -3,8 +3,6 @@
 A **Text Similarity Checker** built with **Next.js 15, TypeScript, Zod, and Hugging Face AI**.  
 This app allows users to submit two pieces of text and receive a **similarity score** along with a **label** indicating whether the texts are _similar_, _maybe relevant_, or _not relevant_.
 
-It demonstrates **full-stack development, AI integration, and modern UI design** — perfect for portfolio or internship showcases.
-
 ---
 
 ## 🚀 Features
