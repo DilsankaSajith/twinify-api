@@ -1,6 +1,7 @@
 import Demo from '@/components/demo';
 import MaxWidthWrapper from '@/components/max-width-wrapper';
 import { Check } from 'lucide-react';
+import Link from 'next/link';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
@@ -90,6 +91,25 @@ const Page = () => {
       <section className="relative py-24 sm:py-32">
         <MaxWidthWrapper>
           <Demo />
+        </MaxWidthWrapper>
+      </section>
+
+      <section className="relative py-8 sm:py-16 border-t border-gray-200 bg-white">
+        <MaxWidthWrapper className="flex items-center justify-center">
+          <div className="flex items-center flex-col gap-1.5 justify-center text-gray-600 tracking-tight text-sm/7">
+            <p>A project created for learning purpose</p>
+            <p>
+              Page design inspiration from{' '}
+              <Link
+                href="https://www.profanity.dev/"
+                target="_blank"
+                className="underline"
+              >
+                profanity
+              </Link>
+            </p>
+            <p className="text-xs mt-2 text-gray-400">&copy; 2025 TwinifyAPI</p>
+          </div>
         </MaxWidthWrapper>
       </section>
     </>
