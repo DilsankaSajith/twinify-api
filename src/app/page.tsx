@@ -7,16 +7,16 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const Page = () => {
   const codeSnippet = `
-    await fetch('http://localhost:3000/api/similarity', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            text1: 'I love coding',
-            text2: 'Coding is my middle name',
-        }),
-    });`;
+await fetch('https://twinifyapi.netlify.app/api/similarity', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+        text1: 'I love coding',
+        text2: 'Coding is my middle name',
+    }),
+});`;
 
   return (
     <>

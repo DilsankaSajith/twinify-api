@@ -31,16 +31,19 @@ const Demo = () => {
 
     try {
       setIsLoading(true);
-      const response = await fetch('http://localhost:3000/api/similarity', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          text1: requestData.text1,
-          text2: requestData.text2,
-        }),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_URL}/api/similarity`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            text1: requestData.text1,
+            text2: requestData.text2,
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`API error: ${response.status}`);
