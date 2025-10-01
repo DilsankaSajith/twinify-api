@@ -102,7 +102,7 @@ const Demo = () => {
           <Badge className="bg-gray-700 mt-6 sm:mt-0">POST</Badge>
           <div className="w-px h-5 bg-gray-300" />
           <p className="font-semibold tracking-tight text-gray-900">
-            http://localhost:3000/api/similarity
+            {`${process.env.NEXT_PUBLIC_URL}/api/similarity`}
           </p>
         </div>
         <div className="mt-6 sm:mt-0 flex items-center gap-2 ml-auto">
